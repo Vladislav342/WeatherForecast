@@ -23,8 +23,6 @@ import { RemoveModal } from '../removeModal/RemoveModal';
 import { labels } from './constants';
 
 const Home = () => {
-  // localStorage.removeItem('weatherHistory');
-
   const [isRemoveModalOpen, setRemoveModalOpen] = useState<boolean>(false);
 
   const [city, setCity] = useState('');
@@ -42,7 +40,7 @@ const Home = () => {
   const [hasError, setHasError] = useState(false);
   const [inputHasError, setInputHasError] = useState(false);
 
-  const handleSearch = () => {
+  const handleSearch = useCallback(() => {
     const cleanCity = city.trim();
     const isValid = /^[A-Za-z\s]{1,30}$/.test(cleanCity);
 
@@ -53,7 +51,7 @@ const Home = () => {
 
     setInputHasError(false);
     getWeather(cleanCity);
-  };
+  }, [city]);
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCity(e.target.value);
@@ -201,6 +199,10 @@ const Home = () => {
           className={styles.centerContentForm}
           noValidate
           autoComplete="off"
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSearch();
+          }}
         >
           <TextField
             inputRef={inputRef}
@@ -214,6 +216,7 @@ const Home = () => {
             helperText={inputHasError ? labels.inputErrorMessage : ''}
           />
           <Button
+            type="submit"
             variant="contained"
             color="primary"
             className={styles.centerContentSearch}

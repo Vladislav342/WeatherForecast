@@ -31,11 +31,7 @@ describe('App component', () => {
     );
 
     expect(await screen.findByText(/Mocked Home Page/i)).toBeInTheDocument();
-    // expect(screen.getByRole('button', { name: /home/i })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /home/i })).toBeInTheDocument();
-    // expect(
-    //   screen.getByRole('button', { name: /weather/i }),
-    // ).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /weather/i })).toBeInTheDocument();
   });
 
@@ -64,10 +60,6 @@ describe('App component', () => {
 
     const buttons = await screen.findAllByText('Home');
     expect(buttons[0]).toBeInTheDocument();
-
-    //expect(await screen.findAllByText('Home')).toBeInTheDocument();
-    // expect(await screen.findByText('Weather')).toBeInTheDocument();
-
     expect(screen.getAllByText('Weather')[0]).toBeInTheDocument();
   });
 });

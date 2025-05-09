@@ -27,7 +27,7 @@ describe('RemoveModal Component', () => {
   it('calls onClose when Cancel is clicked', async () => {
     render(<RemoveModal {...defaultProps} />);
     const cancelBtn = screen.getByText(/Cancel/i);
-    await userEvent.click(cancelBtn); // замість fireEvent
+    await userEvent.click(cancelBtn);
     expect(mockOnClose).toHaveBeenCalled();
   });
 

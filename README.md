@@ -1,21 +1,31 @@
 ## Commands
 
-1. Run the Website Forecast
+1. Clone the repo
+```sh
+	git clone https://github.com/Vladislav342/WeatherForecast.git
+```
+
+2. Clone the repo
+```sh
+	npm install
+```
+
+3. Run the Website Forecast
 ```sh
 	npm run start
 ```
 
-2.Run ESlint for searching the mistakes
+4.Run ESlint for searching the mistakes
 ```sh
 	npm run lint 
 ```
 
-3. Run Prettierfor formatting the code
+5. Run Prettierfor formatting the code
 ```sh
 	npm run prettier 
 ```
 
-4. Run Jest for checking the tests
+6. Run Jest for checking the tests
 ```sh
 	npm run test
 ```

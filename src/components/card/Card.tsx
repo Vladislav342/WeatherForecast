@@ -116,6 +116,7 @@ export const CardWeather: React.FC<CardWeatherProps> = ({
           </Box>
           <Box display="flex" alignItems="center">
             <IconButton
+              data-testid="arrow-left"
               onClick={e => {
                 e.stopPropagation();
                 onPrevDay('prev', date.date, city);
@@ -125,6 +126,7 @@ export const CardWeather: React.FC<CardWeatherProps> = ({
             </IconButton>
             <Typography variant="h6">{curDay + ' ' + curMonth}</Typography>
             <IconButton
+              data-testid="arrow-right"
               onClick={e => {
                 e.stopPropagation();
                 onNextDay('next', date.date, city);
@@ -136,6 +138,7 @@ export const CardWeather: React.FC<CardWeatherProps> = ({
           <Box className={styles.cardIcons}>
             <TooltipMaterial title="Refresh">
               <IconButton
+                data-testid="refresh"
                 onClick={e => {
                   e.stopPropagation();
                   onRefresh(city);
@@ -147,6 +150,7 @@ export const CardWeather: React.FC<CardWeatherProps> = ({
             </TooltipMaterial>
             <TooltipMaterial title="Remove">
               <IconButton
+                data-testid="remove"
                 onClick={e => {
                   e.stopPropagation();
                   onDelete(city);

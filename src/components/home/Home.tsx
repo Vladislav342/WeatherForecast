@@ -23,6 +23,8 @@ import { RemoveModal } from '../removeModal/RemoveModal';
 import { labels } from './constants';
 
 const Home = () => {
+  // localStorage.removeItem('weatherHistory');
+
   const [isRemoveModalOpen, setRemoveModalOpen] = useState<boolean>(false);
 
   const [city, setCity] = useState('');

@@ -64,6 +64,10 @@ describe('App component', () => {
 
     const buttons = await screen.findAllByText('Home');
     expect(buttons[0]).toBeInTheDocument();
+
+    //expect(await screen.findAllByText('Home')).toBeInTheDocument();
+    // expect(await screen.findByText('Weather')).toBeInTheDocument();
+
     expect(screen.getAllByText('Weather')[0]).toBeInTheDocument();
   });
 });

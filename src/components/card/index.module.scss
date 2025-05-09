@@ -1,0 +1,43 @@
+.card {
+    //display="flex" justifyContent="space-between" alignItems="center"
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &City {
+        font-size: 30px;
+    }
+
+    &Sub {
+        display: inline-block;
+        padding: 3px 5px;
+        background: #e5464F;
+        border-radius: 6px;
+        color: #fff;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 1;
+    }
+
+    &Icons {
+        display: flex;
+        align-items: center;
+        gap: 1;
+    }
+}
+
+.cardDay {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.forecast {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &Number {
+        color: rgb(4, 4, 246);
+    }
+}

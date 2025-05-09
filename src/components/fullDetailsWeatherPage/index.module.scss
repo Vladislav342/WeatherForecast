@@ -1,0 +1,38 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &CityName {
+        font-size: 30px;
+    }
+
+    &CountryCode {
+        display: inline-block;
+        padding: 3px 5px;
+        background: #e5464F;
+        border-radius: 6px;
+        color: #fff;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 1;
+    }
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &Temp {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+.chart {
+    display: flex;
+    justify-content: center;
+    max-height: 150px;
+}

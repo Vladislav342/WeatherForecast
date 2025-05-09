@@ -1,0 +1,21 @@
+.app-container {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.navbar {
+  background-color: #1976d2 !important;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-links button {
+  text-align: right;
+
+  button {
+    margin-left: 1rem;
+  }
+}

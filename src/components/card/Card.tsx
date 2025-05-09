@@ -13,7 +13,7 @@ import CachedIcon from '@mui/icons-material/Cached';
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import { IWeather } from '../../types/IWeather';
-import styles from './index.module.scss';
+import * as styles from './index.module.scss';
 import {
   Chart as ChartJS,
   CategoryScale,

@@ -1,3 +1,4 @@
+import React from 'react';
 import { IWeatherDay } from '../../types/IWeather';
 import { Typography, Box } from '@mui/material';
 import { Line } from 'react-chartjs-2';
@@ -11,7 +12,7 @@ import {
   PointElement,
   LineElement,
 } from 'chart.js';
-import styles from './index.module.scss';
+import * as styles from './index.module.scss';
 import { options } from '../../common/helpers';
 
 ChartJS.register(

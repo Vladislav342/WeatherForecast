@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import {
   CircularProgress,
   Typography,
@@ -7,7 +7,7 @@ import {
   Button,
   TextField,
 } from '@mui/material';
-import styles from './index.module.scss';
+import * as styles from './index.module.scss';
 import {
   useLazyGetWeatherQuery,
   useLazyGetFullWeatherQuery,
@@ -23,8 +23,6 @@ import { RemoveModal } from '../removeModal/RemoveModal';
 import { labels } from './constants';
 
 const Home = () => {
-  // localStorage.removeItem('weatherHistory');
-
   const [isRemoveModalOpen, setRemoveModalOpen] = useState<boolean>(false);
 
   const [city, setCity] = useState('');

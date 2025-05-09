@@ -13,7 +13,7 @@ import {
   ListItemText,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import styles from './index.module.scss';
+import * as styles from './index.module.scss';
 
 const navLinks = [
   { title: 'Home', path: '/' },

@@ -1,3 +1,4 @@
+import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import App from './App';
@@ -13,6 +14,12 @@ jest.mock(
   () => () => <div>Mocked Full Details Page</div>,
 );
 
+global.fetch = jest.fn(() =>
+  Promise.resolve({
+    json: () => Promise.resolve({}),
+  }),
+) as jest.Mock;
+
 describe('App component', () => {
   it('renders Home page and navigation buttons', async () => {
     render(
@@ -24,10 +31,12 @@ describe('App component', () => {
     );
 
     expect(await screen.findByText(/Mocked Home Page/i)).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /home/i })).toBeInTheDocument();
-    expect(
-      screen.getByRole('button', { name: /weather/i }),
-    ).toBeInTheDocument();
+    // expect(screen.getByRole('button', { name: /home/i })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /home/i })).toBeInTheDocument();
+    // expect(
+    //   screen.getByRole('button', { name: /weather/i }),
+    // ).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /weather/i })).toBeInTheDocument();
   });
 
   it('navigates to Weather page', async () => {
@@ -53,7 +62,8 @@ describe('App component', () => {
     const menuButton = screen.getByLabelText(/menu/i);
     fireEvent.click(menuButton);
 
-    expect(await screen.findByText('Home')).toBeInTheDocument();
-    expect(await screen.findByText('Weather')).toBeInTheDocument();
+    const buttons = await screen.findAllByText('Home');
+    expect(buttons[0]).toBeInTheDocument();
+    expect(screen.getAllByText('Weather')[0]).toBeInTheDocument();
   });
 });

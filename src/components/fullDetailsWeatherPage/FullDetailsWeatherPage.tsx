@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Container, Typography, Box } from '@mui/material';
 import { IWeather, IHourly } from '../../types/IWeather';
-import styles from './index.module.scss';
+import * as styles from './index.module.scss';
 import { WeatherDay } from './WeatherDay';
 import { getWeatherFromStorage } from '../../common/helpers';
 

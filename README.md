@@ -5,7 +5,7 @@
 	git clone https://github.com/Vladislav342/WeatherForecast.git
 ```
 
-2. Clone the repo
+2. Install the dependencies
 ```sh
 	npm install
 ```
